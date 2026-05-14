@@ -2,12 +2,12 @@
 import { Reveal } from "../animations/Reveal";
 
 export const Hero = () => (
-  <section className="h-screen flex flex-col items-center justify-center text-center px-6 sticky top-0">
+  <section className="relative h-screen flex flex-col items-center justify-center text-center px-6">
     <Reveal>
       <span className="text-yellow-500/80 tracking-[0.6em] text-[10px] uppercase mb-6 block font-medium">Digital Tribute • 2026</span>
     </Reveal>
     <Reveal delay={0.4}>
-      <h1 className="text-7xl md:text-9xl font-extrabold mb-8 bg-gradient-to-b from-white to-zinc-500 bg-clip-text text-transparent">
+      <h1 className="text-6xl md:text-9xl font-extrabold mb-8 bg-gradient-to-b from-white to-zinc-500 bg-clip-text text-transparent">
         Kannika
       </h1>
     </Reveal>
