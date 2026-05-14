@@ -3,30 +3,21 @@ import { Reveal } from "../atoms/Reveal";
 import { Countdown } from "../molecules/Countdown";
 
 export const Hero = () => (
-  <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-    <div className="z-10 text-center">
-      <Reveal delay={0.2}>
-        <span className="text-yellow-500/60 text-[10px] tracking-[0.6em] uppercase mb-8 block">
-          Exclusive Tribute • Brazil 2026
-        </span>
-      </Reveal>
-      
-      <Reveal delay={0.4}>
-        <h1 className="text-7xl md:text-[12rem] font-bold tracking-tighter leading-none text-white mix-blend-difference">
-          Kannika
-        </h1>
-      </Reveal>
-
-      <Reveal delay={0.6}>
-        <p className="mt-6 text-zinc-500 tracking-[0.2em] text-sm uppercase italic">
-          สุขสันต์วันเกิด — A Journey of Light
-        </p>
-      </Reveal>
-
-      <Countdown />
-    </div>
-
-    {/* Detalhe de luxo: Linha vertical de scroll */}
-    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[1px] h-20 bg-gradient-to-b from-yellow-500/50 to-transparent" />
+  <section className="relative h-screen flex flex-col items-center justify-center bg-black">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-900/10 via-black to-black -z-10" />
+    <Reveal delay={0.2} className="mb-4">
+      <span className="text-[10px] tracking-[0.8em] uppercase text-yellow-500/50 font-bold">A Special Tribute</span>
+    </Reveal>
+    <Reveal delay={0.4}>
+      <h1 className="text-8xl md:text-[14rem] font-black tracking-[0.1em] gold-gradient leading-none">
+        KANNIKA
+      </h1>
+    </Reveal>
+    <Reveal delay={0.6}>
+      <p className="mt-8 text-zinc-500 tracking-[0.4em] text-xs uppercase font-light">
+        สุขสันต์วันเกิด — 19.05.2026
+      </p>
+    </Reveal>
+    <Countdown />
   </section>
 );

@@ -3,31 +3,26 @@ import { motion } from "framer-motion";
 import { Reveal } from "../atoms/Reveal";
 
 const milestones = [
-  { year: "2024", title: "Primeiro Encontro", desc: "Onde cada detalhe da nossa história começou a ser escrito." },
-  { year: "2025", title: "Evolução", desc: "Crescendo juntos e fortalecendo o que nos une." },
-  { year: "2026", title: "O Agora", desc: "Celebrando a mulher incrível que você se torna a cada dia." }
+  { year: "2024", title: "Primeiro Encontro", desc: "O início de uma jornada escrita com luz." },
+  { year: "2025", title: "Evolução", desc: "Fortalecendo laços e construindo nosso mundo." },
+  { year: "2026", title: "O Agora", desc: "Celebrando a mulher magnífica que você é." }
 ];
 
 export const Timeline = () => (
-  <section className="py-40 px-6 bg-zinc-950/20">
+  <section className="py-60 px-6">
     <div className="max-w-6xl mx-auto">
-      <Reveal className="mb-24">
-        <h2 className="text-zinc-500 text-[10px] tracking-[0.5em] uppercase">The Journey</h2>
+      <Reveal className="mb-32 text-center mx-auto">
+        <h2 className="text-zinc-600 text-[10px] tracking-[1em] uppercase">The Journey</h2>
       </Reveal>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {milestones.map((m, i) => (
           <motion.div 
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -8 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="p-10 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-yellow-500/20 hover:bg-white/[0.04] transition-all duration-500"
+            whileHover={{ y: -10, borderColor: 'rgba(234,179,8,0.2)' }}
+            className="glass-card p-12 rounded-[40px] transition-all duration-700"
           >
-            <span className="text-yellow-500/40 font-mono text-xs mb-6 block">{m.year}</span>
-            <h3 className="text-2xl text-white font-light mb-4">{m.title}</h3>
+            <span className="text-yellow-500/30 font-mono text-[10px] mb-8 block tracking-widest">{m.year}</span>
+            <h3 className="text-3xl text-white font-light mb-6 tracking-tight">{m.title}</h3>
             <p className="text-zinc-500 text-sm leading-relaxed font-light">{m.desc}</p>
           </motion.div>
         ))}
