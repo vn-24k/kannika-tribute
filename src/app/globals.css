@@ -2,21 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:italic,wght@300;400;500&family=Inter:wght@300&display=swap');
+
 body {
-  background: #000;
-  color: #fff;
+  background: #0a0a0a;
+  color: #fdfcfb;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  font-feature-settings: "ss01", "ss02", "cv01";
 }
 
-.glass-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
-  border: 1px solid rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
+.serif {
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.gold-gradient {
-  background: linear-gradient(to bottom, #fff 0%, #a1a1aa 100%);
+.gold-shimmer {
+  background: linear-gradient(90deg, #d4af37, #f7e7ce, #d4af37);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+.princess-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  backdrop-filter: blur(20px);
 }
