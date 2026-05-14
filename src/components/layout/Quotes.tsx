@@ -1,15 +1,28 @@
 "use client";
-import { Reveal } from "../animations/Reveal";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-export const Quotes = () => (
-  <section className="py-40 px-6 flex flex-col items-center justify-center bg-zinc-950/30">
-    <Reveal>
-      <blockquote className="max-w-2xl text-center">
-        <p className="text-2xl md:text-4xl font-light italic text-zinc-200 leading-relaxed">
-          "Some people make the world brighter just by being in it."
+export const Quotes = () => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+
+  return (
+    <section ref={container} className="h-screen flex items-center justify-center bg-black">
+      <motion.div style={{ opacity, scale }} className="max-w-4xl px-10 text-center">
+        <h2 className="text-yellow-500/40 text-[10px] tracking-[0.8em] uppercase mb-12">The Declaration</h2>
+        <p className="text-3xl md:text-5xl font-extralight text-white leading-tight italic">
+          "Para o mundo, você pode ser apenas uma pessoa, mas para mim, você é o próprio mundo."
         </p>
-        <footer className="mt-8 text-yellow-500/50 tracking-widest text-xs uppercase">— Dedicated to You</footer>
-      </blockquote>
-    </Reveal>
-  </section>
-);
+        <p className="mt-10 text-zinc-600 text-sm tracking-widest font-light">
+          ความรักของฉันจะอยู่เคียงข้างคุณเสมอ
+        </p>
+      </motion.div>
+    </section>
+  );
+};
