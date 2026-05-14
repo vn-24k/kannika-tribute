@@ -1,18 +1,16 @@
-import { Hero } from "@/components/layout/Hero";
-import { Footer } from "@/components/layout/Footer";
-import { Timeline } from "@/components/layout/Timeline";
-import { Quotes } from "@/components/layout/Quotes";
-import { AmbientBackground } from "@/components/layout/AmbientBackground";
+import { AmbientBackground } from "@/components/atoms/AmbientBackground";
+import { Hero } from "@/components/organisms/Hero";
 
 export default function Home() {
   return (
-    <main className="relative bg-black selection:bg-yellow-500/30">
+    <main className="relative min-h-screen">
+      {/* Camada 0: Fundo Atmosférico */}
       <AmbientBackground />
+      
+      {/* Camada 1: Experiência de Imersão */}
       <div className="relative z-10">
         <Hero />
-        <Quotes />
-        <Timeline />
-        <Footer />
+        {/* Seções futuras como Timeline e Quotes entrarão aqui em blocos organizados */}
       </div>
     </main>
   );
